@@ -1,6 +1,5 @@
-import React from "react";
-import "./Header.css";
-
-export default function Header() {
-    return <header className="Header">Header</header>;
+function Header() {
+    return <h1>🍿 Popcorn Time! 🍿</h1>;
 }
+
+export default Header;
