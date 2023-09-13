@@ -1,16 +1,20 @@
 import { useState } from "react";
 import "./App.css";
+import movies from "./data/movies.json";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 function App() {
-    const [count, setCount] = useState(0);
-
+    const [moviesToDisplay, setMoviesToDisplay] = useState(movies);
+    const deleteMovie = (movieId) => {
+        const newList = moviesToDisplay.filter((e) => movieId !== e.id);
+        setMoviesToDisplay(newList);
+    };
     return (
         <>
-            <Header />
-            <Main />
+            <Header numberOfMovies={moviesToDisplay.length} />
+            <Main movies={moviesToDisplay} callbackToDelete={deleteMovie} />
             <Footer />
         </>
     );
