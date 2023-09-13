@@ -3,10 +3,10 @@ import Movie from "./Movie";
 function Main(props) {
     return (
         <div className="Main">
-            {props.movies.map((movieObj) => {
+            {props.movies.map((movieObj, index) => {
                 return (
                     <Movie
-                        key={movieObj.id}
+                        key={index}
                         movieDetails={movieObj}
                         callbackToDelete={props.callbackToDelete}
                     />
