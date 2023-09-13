@@ -2,6 +2,7 @@ function Header(props) {
     return (
         <header>
             <h1>🍿 Popcorn Time! 🍿</h1>
+
             {props.numberOfMovies > 0 ? (
                 <h2>Number of movies: {props.numberOfMovies}</h2>
             ) : (

@@ -1,14 +1,13 @@
-import React, { useState } from "react";
 import Movie from "./Movie";
 
-export default function Main(props) {
+function Main(props) {
     return (
-        <div>
-            {props.movies.map((movie) => {
+        <div className="Main">
+            {props.movies.map((movieObj) => {
                 return (
                     <Movie
-                        key={movie.id}
-                        movieDetails={movie}
+                        key={movieObj.id}
+                        movieDetails={movieObj}
                         callbackToDelete={props.callbackToDelete}
                     />
                 );
@@ -16,3 +15,5 @@ export default function Main(props) {
         </div>
     );
 }
+
+export default Main;
